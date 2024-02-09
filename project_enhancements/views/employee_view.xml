@@ -1,0 +1,42 @@
+<odoo>
+    <data>
+        <record id="employee_view_tree_inherit" model="ir.ui.view">
+            <field name="name">Employee.View.Tree.Inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='job_id']" position="after">
+                    <field name="github_account"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="employee_view_form_inherit" model="ir.ui.view">
+            <field name="name">Employee.View.Form.Inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='work_email']" position="after">
+                    <field name="github_account"/>
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page string="Related Projects">
+                        <field name="collaborator_project_ids" widget="many2many_tags">
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="employee_view_kanban_inherit" model="ir.ui.view">
+            <field name="name">Employee.View.Kanban.Inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.hr_kanban_view_employees"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('oe_kanban_details')]" position="inside">
+                    <field style="font-weight:bold;" name="github_account"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

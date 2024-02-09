@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="project_report">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <t t-foreach="docs" t-as="o">
+                    <style>
+                        table, th, td {
+                        border: 1px solid black;
+                        text-align: center;
+                        }
+                    </style>
+                    <div class="oe_structure"/>
+                    <div class="page">
+                        <div class="header_section">
+                            <h1 style="text-align:center;">Project Report</h1>
+                        </div>
+                        <br/>
+                        <!--Project Information Table-->
+                        <table class="table table-striped" style="text-align:center;width:100%;">
+                            <tbody>
+                                <tr>
+                                    <td>Project Name</td>
+                                    <td>
+                                        <span t-field="o.name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Project Start Date</td>
+                                    <td>
+                                        <span t-field="o.date_start"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Project End Date</td>
+                                    <td>
+                                        <span t-field="o.date"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>GitHub Repo Name</td>
+                                    <td>
+                                        <span t-field="o.github_repo_name"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>GitHub Repo URL</td>
+                                    <td>
+                                        <span t-field="o.github_repo_url"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Odoo Version</td>
+                                    <td>
+                                        <span t-field="o.odoo_version"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Odoo Type</td>
+                                    <td>
+                                        <span t-field="o.odoo_type"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Project Hosting</td>
+                                    <td>
+                                        <span t-field="o.hosting_selection"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br/>
+                        <!--Project Collaborators Table-->
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Collaborator Name</th>
+                                    <th scope="col">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="o.collaborator_ids" t-as="coll">
+                                    <td>
+                                        <span t-field="coll.employee_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="coll.status"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

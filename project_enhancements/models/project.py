@@ -16,3 +16,4 @@ class ProjectEnhancement(models.Model):
          ('odoo_online', 'Odoo Online')], string='Hosting Selection')
     hosting_description = fields.Html(string='Hosting Description')
     collaborator_ids = fields.One2many('project.collaborators', 'project_id', string='Collaborators')
+

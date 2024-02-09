@@ -2,3 +2,5 @@
 
 from . import project
 from . import collaborators
+from . import employee
+

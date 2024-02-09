@@ -8,7 +8,7 @@
                 <notebook position="inside">
                     <page string="Collaborators">
                         <field name="collaborator_ids">
-                            <tree>
+                            <tree string="Collaborators" decoration-danger="status == 'inactive'" decoration-success="status == 'active'">
                                 <field name="employee_id"/>
                                 <field name="status"/>
                                 <button name="action_toggle_status" type="object" icon="fa-check"
