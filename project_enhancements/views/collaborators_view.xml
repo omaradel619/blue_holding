@@ -1,0 +1,27 @@
+<odoo>
+    <data>
+        <record id="project_collaborators_view_tree" model="ir.ui.view">
+            <field name="name">project.collaborators.view.tree</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Collaborators">
+                        <field name="collaborator_ids">
+                            <tree>
+                                <field name="employee_id"/>
+                                <field name="status"/>
+                                <button name="action_toggle_status" type="object" icon="fa-check"
+                                        class="oe_highlight oe_green"
+                                        attrs="{'invisible': [('status', '=', 'active')]}"/>
+                                <button name="action_toggle_status" type="object" icon="fa-times"
+                                        class="btn-danger"
+                                        attrs="{'invisible': [('status', '=', 'inactive')]}"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+    </data>
+</odoo>

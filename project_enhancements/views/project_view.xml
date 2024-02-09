@@ -1,0 +1,27 @@
+<odoo>
+    <data>
+        <record id="project_inherit_view_form" model="ir.ui.view">
+            <field name="name">project.inherit.view.form</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[1]" position="after">
+                    <group>
+                        <group string="Odoo Info">
+                            <field name="odoo_version"/>
+                            <field name="odoo_type"/>
+                        </group>
+                        <group string="Github Info">
+                            <field name="github_repo_name"/>
+                            <field name="github_repo_url" widget="url"/>
+                        </group>
+                        <group string="Hosting Info">
+                            <field name="hosting_selection"/>
+                            <field name="hosting_description"/>
+                        </group>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
