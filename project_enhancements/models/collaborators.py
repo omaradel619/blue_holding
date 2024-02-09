@@ -3,6 +3,7 @@ from odoo import models, fields, api
 
 class ProjectCollaborators(models.Model):
     _name = 'project.collaborators'
+    _description = 'Project Collaborators'
 
     employee_id = fields.Many2one('hr.employee', string='Employee')
     status = fields.Selection(

@@ -12,4 +12,4 @@ class Employee(models.Model):
     def _get_related_project(self):
         for rec in self:
             self.collaborator_project_ids = self.env['project.collaborators'].search(
-                [('employee_id', '=', rec.id), ('status', '=', 'active')]).mapped('project_id')
+                [('employee_id', '=', rec.id)]).mapped('project_id')

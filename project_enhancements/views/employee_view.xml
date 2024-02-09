@@ -21,7 +21,7 @@
                 </xpath>
                 <xpath expr="//notebook" position="inside">
                     <page string="Related Projects">
-                        <field name="collaborator_project_ids" widget="many2many_tags">
+                        <field name="collaborator_project_ids">
                         </field>
                     </page>
                 </xpath>
