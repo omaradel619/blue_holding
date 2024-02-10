@@ -11,9 +11,9 @@ class EmployeeController(http.Controller):
             [('collaborator_ids', '!=', False)
                 , ('collaborator_ids.status', '=', 'active')]).mapped(lambda project:
                                                                       {
-                                                                          'project_name': project.name,
-                                                                          'project_id': project.id,
-                                                                          'EMP Name': project.collaborator_ids.mapped
+                                                                          'Project Name': project.name,
+                                                                          'Project ID': project.id,
+                                                                          'EMP Info': project.collaborator_ids.mapped
                                                                           (lambda employee: {
                                                                               'Name': employee.employee_id.name,
                                                                               'Status': employee.status,
